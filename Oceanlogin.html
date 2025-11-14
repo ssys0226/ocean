@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>시작 페이지</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+        h1 {
+            color: #333;
+        }
+        p {
+            font-size: 1.2em;
+            color: #555;
+        }
+        input[type="submit"] {
+            padding: 10px 20px;
+            font-size: 1em;
+            background-color: #007BFF;
+            color: #fcf9fb;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>오션</h1>
+    <p><strong>  </strong>  </p>
+    <form action="Ocean.html">
+        <input type="submit" value="시작">
+    </form>
+</body>
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>드래그로 이미지 위치 바꾸기</title>
+  <style>
+    #dragImage {
+      position: absolute;
+      top: 300px;
+      right: 550px;
+      width: 200px;
+      cursor: move;
+    }
+  </style>
+</head>
+<body>
+  
+  <img src="1.gif" id="dragImage" alt="드래그 이미지">   <!-- 마우스로 그림 위치 자유롭게 조정 -->
+  
+  <script>
+    const img = document.getElementById("dragImage");
+    let isDragging = false;
+    let offsetX, offsetY;
+
+    img.addEventListener('mousedown', function(e) {
+      isDragging = true;
+      offsetX = e.offsetX;
+      offsetY = e.offsetY;
+    });
+
+    document.addEventListener('mousemove', function(e) {
+      if (isDragging) {
+        img.style.left = (e.pageX - offsetX) + 'px';
+        img.style.top = (e.pageY - offsetY) + 'px';
+      }
+    });
+
+    document.addEventListener('mouseup', function() {
+      isDragging = false;
+    });
+  </script>
+
+  </body>
+
+
+  
+</html>
